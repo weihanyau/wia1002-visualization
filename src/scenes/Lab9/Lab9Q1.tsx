@@ -70,7 +70,7 @@ public static String substituteAI (String str) {
   yield* substituteAI(inputString);
   yield* waitFor(2);
 
-  function* substituteAI(input: string): Generator<unknown, string, unknown> {
+  function* substituteAI(input: string): Generator<any, string, any> {
     if (input.length == 0) {
       yield* codeRef().selection(lines(1, 3), 1);
       yield* answerRef().edit(1.2)`"${answer}"${edit(
